@@ -69,7 +69,7 @@ SAL grew out of a single-researcher workflow and is being progressively cleaned 
 
 ## Citation
 
-If you use SAL in academic work, please cite this repository and contact the author for the appropriate reference.
+If you use SAL in academic work, please cite it using the metadata in [`CITATION.cff`](CITATION.cff) — or click the **"Cite this repository"** button in the sidebar of the GitHub page for ready-made APA / BibTeX exports.
 
 ## Author
 
