@@ -1,7 +1,0 @@
-# SAL — Saccade Analysis Lab
-
-algorithms for detecting and analyzing saccades (rapid eye movements).
-
-This repository contains:
-- `sal_functions/` – a collection of all functions needed to run the scripts in the sal_analysis
-- `sal_analysis/` – core detection and preprocessing scripts
