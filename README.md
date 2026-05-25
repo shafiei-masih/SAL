@@ -18,8 +18,11 @@ A MATLAB toolkit for detecting and analyzing **saccades** (rapid eye movements) 
 
 ```
 SAL/
-├── sal_source_code/    Ordered pipeline scripts (A → E) plus a Live Script walkthrough
+├── sal_source_code/    Ordered pipeline scripts (A → E)
 ├── sal_functions/      ~45 helper functions called by the pipeline
+├── docs/               Algorithm documentation and the Live Script walkthrough
+├── assets/             Repository assets (logo, etc.)
+├── CITATION.cff        Citation metadata
 ├── LICENSE             MIT
 └── README.md
 ```
@@ -37,7 +40,7 @@ The scripts in `sal_source_code/` are designed to be run in order:
 | E    | `E_poolSessions.m`              | Pool per-session outputs into a single cross-session data frame                      |
 | —    | `Rpreparation.m`                | Reshape the pooled frame for export as .csv                                          |
 
-`saccadeDetectionAlgorithm.mlx` provides an interactive walkthrough of the detection algorithm.
+[`docs/saccadeDetectionAlgorithm.mlx`](docs/saccadeDetectionAlgorithm.mlx) provides an interactive walkthrough of the detection algorithm in MATLAB. For a static, browsable description of the method — what the adaptive threshold does, how onsets and offsets are estimated, and where SAL diverges from Nyström & Holmqvist (2010) — see [`docs/algorithm.md`](docs/algorithm.md).
 
 ## Requirements
 
