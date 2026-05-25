@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: "SAL — Saccade Analysis Lab"
+message: "If you use SAL in academic work, please cite it using the metadata below."
+type: software
+authors:
+  - given-names: Masih
+    family-names: Shafiei
+    email: shafiei.masih@gmail.com
+    affiliation: "Thier Lab, Hertie Institute for Clinical Brain Research, University of Tübingen"
+abstract: >-
+  SAL (Saccade Analysis Lab) is a MATLAB toolkit for detecting and analyzing
+  saccades (rapid eye movements) from time series of eye-position data
+  acquired with search-coil or video-based eye trackers. Its core
+  saccade-detection method builds on the adaptive velocity-threshold
+  principle of Nyström and Holmqvist (2010), using fixation-period noise
+  levels to define data-driven thresholds.
+repository-code: "https://github.com/shafiei-masih/SAL"
+license: MIT
+keywords:
+  - matlab
+  - eye-tracking
+  - saccade-detection
+  - oculomotor
+  - neuroscience
+  - saccade-adaptation
+references:
+  - type: article
+    authors:
+      - given-names: Marcus
+        family-names: Nyström
+      - given-names: Kenneth
+        family-names: Holmqvist
+    title: "An adaptive algorithm for fixation, saccade, and glissade detection in eyetracking data"
+    journal: Behavior Research Methods
+    year: 2010
+    volume: 42
+    issue: 1
+    start: 188
+    end: 204
+    doi: 10.3758/BRM.42.1.188
