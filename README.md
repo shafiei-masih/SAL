@@ -1,15 +1,14 @@
 # SAL — Saccade Analysis Lab
 
-A MATLAB toolkit for detecting and analyzing **saccades** (rapid eye movements) from raw eye-tracker recordings. SAL was built to process behavioral data from non-human primates performing reward-based saccade-adaptation tasks, but the core detection and kinematics routines apply to any 2D eye-position time series.
+A MATLAB toolkit for detecting and analyzing **saccades** (rapid eye movements) from time series of eye poisiton data acquired using different eye-tracking systems, incluing search-coil and vide-based eye trackers. ts core saccade-detection method builds on the adaptive velocity-threshold principle introduced by Nyström and Holmqvist (2010), using fixation-period noise levels to define data-driven thresholds for identifying rapid eye movements.
 
 ## Features
 
-- Adaptive velocity-threshold saccade detection from raw X/Y eye-position signals
-- Onset / offset estimation with optional acceleration-based refinement
-- Per-saccade kinematics: amplitude, duration, peak velocity, visual error
-- Trial-level bookkeeping for reward-modulated paradigms (reward condition, direction, intra-saccadic step, free-choice trials)
-- Detection of repeated trials and consecutively repeated rewarded sequences
-- Cross-session pooling and export of a single data frame ready for downstream statistical analysis in R
+- Adaptive velocity-threshold saccade detection from raw horizontal and vertical eye-position signals, with thresholds determined by fixation-period noise levels
+- Saccade onset / offset estimation with optional acceleration-based refinement
+- Per-saccade kinematics and metrics: amplitude, duration, peak velocity, endpoint error
+- Trial-level bookkeeping for paradigms with context modulation (such as reward condition, target direction, sensory-prediciton error type or presence, free-choice trials, etc.)
+- Cross-session pooling and export of a single data frame ready for downstream statistical analysis outside MATLAB
 
 ## Repository structure
 
@@ -27,19 +26,25 @@ The scripts in `sal_source_code/` are designed to be run in order:
 
 | Step | Script                          | Purpose                                                                              |
 |------|---------------------------------|--------------------------------------------------------------------------------------|
-| A    | `A_Preprocessing.m`             | Load a session, remove repeated trials, smooth signals, detect saccades & fixations  |
+| A    | `A_Preprocessing.m`             | Load a session, smooth signals, detect saccades & fixations                          |
 | B    | `B_Looping_1_Preprocessing.m`   | Run step A in batch over every session in a data folder                              |
-| C    | `C_Kinematics.m`                | Compute per-saccade kinematics and tag trials by reward / direction / step condition |
+| C    | `C_Kinematics.m`                | Compute per-saccade kinematics and tag trials by condition                           |
 | D    | `D_Looping_C_Kinematics.m`      | Run step C in batch                                                                  |
 | E    | `E_poolSessions.m`              | Pool per-session outputs into a single cross-session data frame                      |
-| —    | `Rpreparation.m`                | Reshape the pooled frame for export to R                                             |
+| —    | `Rpreparation.m`                | Reshape the pooled frame for export as .csv                                          |
 
-`saccadeDetectionAlgorithm.mlx` provides an interactive walkthrough of the detection routine.
+`saccadeDetectionAlgorithm.mlx` provides an interactive walkthrough of the detection algorithm.
 
 ## Requirements
 
 - MATLAB (recent release recommended)
-- Eye-tracking session files in `.mat` format containing at minimum: `EyeX`, `EyeY`, `TargetX`, `TrialList`, `ExtraChannel4`
+- Eye-tracking session files in `.mat` format containing at minimum:
+      - `EyeX`: Horizontal eye-position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing horizontal eye position.
+      - `EyeY`: Vertical eye-position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing vertical eye position.
+      - `TargetX`: Horizontal saccade-target position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing horizontal target position.
+      - `TargetY`: Vertical saccade-target position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing vertical target position.
+      - `TrialList`: a trials × metadata matrix, with rows representing trials and columns representing trial-specific conditions or experimental variables.
+     
 - *(Optional)* R, for downstream statistical analysis of the exported data frame
 
 ## Getting started
@@ -67,6 +72,9 @@ If you use SAL in academic work, please cite this repository and contact the aut
 
 **Masih Shafiei** — [shafiei.masih@gmail.com](mailto:shafiei.masih@gmail.com)
 
+## Reference:
+
+Nyström, M., & Holmqvist, K. (2010). An adaptive algorithm for fixation, saccade, and glissade detection in eyetracking data. Behavior Research Methods, 42, 188–204.
 ## License
 
 Released under the MIT License — see [LICENSE](LICENSE).
