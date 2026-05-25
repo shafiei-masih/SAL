@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/sal_logo.png" alt="SAL — Saccade Analysis Lab" width="360">
+</p>
+
 # SAL — Saccade Analysis Lab
 
 A MATLAB toolkit for detecting and analyzing **saccades** (rapid eye movements) from time series of eye poisiton data acquired using different eye-tracking systems, incluing search-coil and vide-based eye trackers. Its core saccade-detection method builds on the adaptive velocity-threshold principle introduced by Nyström and Holmqvist (2010), using fixation-period noise levels to define data-driven thresholds for identifying rapid eye movements.
