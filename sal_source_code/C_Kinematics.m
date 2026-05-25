@@ -1,4 +1,4 @@
-kl%% Saccade Adaptation with cue <<<< Monkey >>>>
+%% Saccade Adaptation with cue <<<< Monkey >>>>
 %Position: Left (135 deg) (X= -7.07; Y= 7.07)              Position: Right (45 deg) (X= 7.07; Y= 7.07)         
 %           |IN (-30%)  | - |OUT (-30%) |                      |IN (-30%)  | - |OUT (-30%) | 
 %LOW reward |   6       | 8 |   10      |           LOW reward |   0       | 2 |    4      |    
