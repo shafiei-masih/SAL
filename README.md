@@ -43,12 +43,11 @@ The scripts in `sal_source_code/` are designed to be run in order:
 
 - MATLAB (recent release recommended)
 - Eye-tracking session files in `.mat` format containing at minimum:
-      - `EyeX`: Horizontal eye-position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing horizontal eye position.
-      - `EyeY`: Vertical eye-position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing vertical eye position.
-      - `TargetX`: Horizontal saccade-target position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing horizontal target position.
-      - `TargetY`: Vertical saccade-target position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing vertical target position.
-      - `TrialList`: a trials × metadata matrix, with rows representing trials and columns representing trial-specific conditions or experimental variables.
-     
+  - `EyeX`: Horizontal eye-position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing horizontal eye position.
+  - `EyeY`: Vertical eye-position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing vertical eye position.
+  - `TargetX`: Horizontal saccade-target position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing horizontal target position.
+  - `TargetY`: Vertical saccade-target position data organized as a trials × samples matrix, with rows representing trials, columns representing time samples, and values representing vertical target position.
+  - `TrialList`: a trials × metadata matrix, with rows representing trials and columns representing trial-specific conditions or experimental variables.
 - *(Optional)* R, for downstream statistical analysis of the exported data frame
 
 ## Getting started
