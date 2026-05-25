@@ -52,7 +52,7 @@ function valid_Trials = validTrialFinder(TrialList, repititions)
         end
         temp = zeros(length(TrialList),1); %a temp variable with the same size as the valid_Trial variable with zeros 
         temp(idx_temp,:) = str2double(exclusion_criteria(j).id); %the undesirable indices take the code value that indicates the reason why this index is not desirtable
-        %Here, each index is investigated seperately to see if it is the first time 
+        %Here, each index is investigated separately to see if it is the first time
         %that this index takes a exclusion id or not. If it is not, then
         %new ids are contatenated to the old ones.
         for i = 1:length(TrialList)

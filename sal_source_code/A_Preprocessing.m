@@ -1,7 +1,7 @@
-% This script summarizes the consecutive steps that shoulb be orderly taken
+% This script summarizes the consecutive steps that should be orderly taken
 % to import a data frame and detect event-related saccades from raw
 % positional x- and y-coordinate data. This scripts also takes care of the
-% computations of the follwoing saccaded metrics and kinematics:
+% computations of the following saccade metrics and kinematics:
 %   . onset and offset of saccades
 %   . Peak velocity of saccades
 %% step1: import and prepare data
@@ -52,18 +52,18 @@ ExtraChannel4 = dimensionCorrector(ExtraChannel4);
 % Those trials with multiple indices are the sessions that the monkey
 % didn't work for some time and started working again after a number of
 % invalid trials. The first value indicates the last valid trial of the
-% first batch. The 2nd value the beginnig of the 2nd batch and the 3rd
+% first batch. The 2nd value the beginning of the 2nd batch and the 3rd
 % value the end of the 2nd batch and hence so forth (example 
 % J:\Monkey Project\Analysis\Data\Kruemmel\Analyzed\08.27062020\Original\~
 % ~\Beh\lastTrialID.txt).
 
 %% step 1.2: read the lastTrial.txt and find the repitions
 
-% some time the same trial is repeated because of two reasons:1. bordem or
-% unattentivness, 2. reward. The moneky has left the rewarded trials
+% some time the same trial is repeated because of two reasons:1. boredom or
+% inattentiveness, 2. reward. The monkey has left the rewarded trials
 % incomplete sometimes so that the same trial is repeated and he get to
 % receive reward again and again, I call this sequences "R-seq" (stands for
-% Repitive sequence). 
+% Repetitive sequence).
 
 %In a given R-seq with the r trials, I keep the trial 1 and investigate the
 %influence of error in trial 1-1 (the trial just before) on the amplitude
@@ -97,7 +97,7 @@ repititions = NaN(size(TrialList,1),1);
 tic;
 smooth_EyeX = smooth_saccade(EyeX);
 smooth_EyeY = smooth_saccade(EyeY);
-%compute the first derivatives of the smoothed data seperately for x- and
+%compute the first derivatives of the smoothed data separately for x- and
 %y- coordinates and the total first derivative
 [velX, velY, vel] = pbp_derivatives(smooth_EyeX, smooth_EyeY);
 %correct the unit of velocity values by multiplying by 1000 (smapling
@@ -133,7 +133,7 @@ end
 %the relevant staring point is the timestamp of the primary target shift on
 %the screen
 InitialPointOfSearch = firstTargetShift(raw_targetX_shift);
-%choose the default threshold between 100-300 deg/sec (Nyström & Holmqvist, 2010) 
+%choose the default threshold between 100-300 deg/sec (Nystrï¿½m & Holmqvist, 2010) 
 defaultVelocityThreshold = 100;
 minInterPeakIntervalThreshold = 100;
 [detected_saccades_fixations, saccade_detection_vel_threshold] = ...
@@ -154,11 +154,11 @@ vel_threshold = 200; % minimum velocity threshold for the primary saccade (deg/s
 detected_saccades_fixations = findRelevantNumSaccades(detected_saccades_fixations,...
     required_num_saccades, vel_threshold);
 %% step 4.5: comput descriptive statistics and compare them with previous reports
-% Nyström & Holmqvist, 2010, p. 7: For the reading data used to evaluate
-% the algorithm, average values for fixation velocity were 5.44 +- 4.55º/sec 
-%( Mean_n +- std_n), giving peak velocity thresholds around 33º/sec (but 
+% Nystrï¿½m & Holmqvist, 2010, p. 7: For the reading data used to evaluate
+% the algorithm, average values for fixation velocity were 5.44 +- 4.55ï¿½/sec 
+%( Mean_n +- std_n), giving peak velocity thresholds around 33ï¿½/sec (but 
 %the individual variation was large across participants). In scene 
-%perception data, fixation velocity values were 5.40 +- 3.97º/sec.
+%perception data, fixation velocity values were 5.40 +- 3.97ï¿½/sec.
 %% step 5: find the onset of saccades
 % set the threshold (based on mean and std of fixation points for a given 
 %trial) and find the local minima between the last fixation point below the
@@ -182,7 +182,7 @@ detected_saccades_fixations = findSaccadeOffset(vel, ...
 %% stepX: smooth the velocity data and calculate the acceleration
 smooth_velX = smooth_saccade(velX);
 smooth_velY = smooth_saccade(velY);
-%compute the first derivatives of the smoothed data seperately for velX and
+%compute the first derivatives of the smoothed data separately for velX and
 %velY and the total first derivative (i.e. accelaration)
 [accX, accY, acc] = pbp_derivatives(smooth_velX, smooth_velY);
 %% find additional saccades
@@ -194,7 +194,7 @@ smooth_velY = smooth_saccade(velY);
 % corresponding columns i the detetcted_saccades_fixations variable.
 % Plus, two new variales: additionalSaccades_Bool (0: no additional
 % saccade; 1: additional saccade) and additionalSaccades_type (2: outward
-% saccde; 3: inward).
+% saccade; 3: inward).
 %
 % To plot the detected additional saccades use the script file named 
 % "additionalSaccades_plot.m"

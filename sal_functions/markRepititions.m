@@ -4,7 +4,7 @@ function repititions = markRepititions(TrialList, lastT)
 % There are two types of R-seqs: Long and Short.
 %
 % The long ones are the ones caused by either lack of motivation of the
-% moneky to correctly complete an unrewarded trial or intentionally leaving
+% monkey to correctly complete an unrewarded trial or intentionally leaving
 % a rewarded trial incomplete (after the reward is delivered but before the
 % required time of fixation is reached) hence triggering the repitition of
 % the same trial with the intention to redo the same trial and regain
@@ -39,7 +39,7 @@ function repititions = markRepititions(TrialList, lastT)
 %         Index:  ...1 2 3 4 5 6...
 %          rSeq:  ...1 2 2 2 2 3...
 %
-% Where 1 indicate the beginnig of the short R-seq, 2 invalidly repeated
+% Where 1 indicate the beginning of the short R-seq, 2 invalidly repeated
 % trials, and 3 the end of the sequence.
 
 % Input arguments:
@@ -56,13 +56,13 @@ function repititions = markRepititions(TrialList, lastT)
 
 % Output: repititions is a list with four different values:
 %         0: non-repititive trials
-%         1: the beginnig a micro-repititive sequence
+%         1: the beginning a micro-repititive sequence
 %         3: its end is marked by 3.
 % 	      2: indicates the trials that are repititive and need to be
 %            discarded.
 
 %% find the micro-repititive sequences (mR-seq)
-% On a smaller-scale the repititions also occured because of the same
+% On a smaller-scale the repititions also occurred because of the same
 % reasons. Since these repitions disrupt the balanced representation of the
 % trials in the data pool, they need to be marked and excluded from the
 % final analysis.
@@ -140,7 +140,7 @@ else
 end
 
 %% find the beginning and the end of the microrepititions
-% the beginnig is marked with value "1" and the end is marked by "3".
+% the beginning is marked with value "1" and the end is marked by "3".
 % value "2" indicates the trials that are repeated and need to be
 % discarded.
 % Finally, value "0" are non-repititive trials.

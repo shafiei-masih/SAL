@@ -2,7 +2,7 @@ function kin = rmRepititions(kinematics, repititions)
 % This function place NaNs for the kinematics data of those trials that are
 % repititive. The idea is to keep the appearance of trials in
 % the data consistent across conditions. The repititions are spotted and
-% lablelled using another custome-made script
+% labelled using another custom-made script
 % (~/Functions/markRepititions.m). Here, we just remove their corresponding
 % data from the pool.
 %

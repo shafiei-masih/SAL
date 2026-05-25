@@ -1,6 +1,6 @@
 % This script find all the mat files and allows you to check out each
 % session separately and find the last trial after which the same trial is
-% repeated because the moneky didn't attend to the task any longer.
+% repeated because the monkey didn't attend to the task any longer.
 %% list the MAT files
 folder_list = dir('J:\Monkey Project\Analysis\Data\Kruemmel\Analyzed\**\*.mat');
 % openvar('folder_list')

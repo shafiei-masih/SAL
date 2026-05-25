@@ -224,7 +224,7 @@ while size(direction_target,1) > counter
 end
 % if reward is not delivered mistakely, the rewarded direction in a given
 % block has a 0 for reward_ids. As a consequence, the algorithm recognize
-% is as the begining of a new block. To correct for this mistake, the size
+% is as the beginning of a new block. To correct for this mistake, the size
 % of the block is check as such blcocks usually are shorther than the
 % expected size of 63 trials. In addition, if the 
 blockSize = horzcat(blocks(:,2) - blocks(:,1), blocks(:,3));

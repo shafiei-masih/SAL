@@ -4,7 +4,7 @@ function visualError = visualErrorCalculator(smooth_EyeX, smooth_EyeY, ...
 % This function calculates the following visual errors in the position
 % domain:
 %   1. error_X1, error_Y1, error_size1: end-point error of the PRIMARY
-%   saccade calulated as the difference between the offset coordinates and 
+%   saccade calculated as the difference between the offset coordinates and 
 %   location of the target after the PRIMARY shift along X-axis and Y-axis.
 %   Additionally, the length of the line connecting the saccade offset X-Y
 %   coordinates and the target location after the PRIMARY target
@@ -15,7 +15,7 @@ function visualError = visualErrorCalculator(smooth_EyeX, smooth_EyeY, ...
 %   target location after the SECONDARY target shift are used.
 %
 %   3. ierrorX, ierrorY, ierror: induced end-point error of the PRIMARY
-%   saccade calulated as the difference between the offset coordinates and 
+%   saccade calculated as the difference between the offset coordinates and 
 %   location of the target after the SECONDARY shift along X-axis and Y-axis.
 %   Additionally, the length of the line connecting the saccade offset X-Y
 %   coordinates and the target location after the SECONDARY target
@@ -60,7 +60,7 @@ function visualError = visualErrorCalculator(smooth_EyeX, smooth_EyeY, ...
 %   3. detected_saccades_fixations: time-stamps of the offset of the
 %   detected saccades.
 %
-%   4. trialType: type fo Intra-saccadic step is used to know whether a
+%   4. trialType: type of Intra-saccadic step is used to know whether a
 %   secondary target shift occurred or not. If so, the location of the
 %   target afterwards is 23 or 17.
 %
@@ -221,7 +221,7 @@ for i = 1:size(detected_saccades_fixations,2)
                     %     if ~isnan(additionalSaccades_type(i))
                     %         % given than for both types of additional corrective
                     %         % saccades final target postion is the same, there is
-                    %         % no need to seperately run the analysis for each type.
+                    %         % no need to separately run the analysis for each type.
                     %         visualError(i).error_X2 = abs(positionX(offset(2,2))) - 20; %predicted - observed -> undershoots have negative values while overshoots are positive
                     %         visualError(i).error_Y2 = positionY(offset(2,2));           % if postionY < 0 => undershoot and if > 0 => overshoot
                     %         visualError(i).error_size2 =  euclideanDistance(...            

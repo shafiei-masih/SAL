@@ -80,7 +80,7 @@ filepathmain = filepath;
 %% step2: smooth the raw positional data and calculate velocity and acceleration
 % smooth_EyeX = smooth_saccade(EyeX);
 % smooth_EyeY = smooth_saccade(EyeY);
-%compute the first derivatives of the smoothed data seperately for x- and
+%compute the first derivatives of the smoothed data separately for x- and
 %y- coordinates and the total first derivative
 % [velX, velY, vel] = pbp_derivatives(smooth_EyeX, smooth_EyeY);
 %correct the unit of velocity values by multiplying by 1000 (smapling
@@ -93,7 +93,7 @@ filepathmain = filepath;
 % smooth_velX = smooth_saccade(velX);
 % smooth_velY = smooth_saccade(velY);
 % toc;
-%compute the first derivatives of the smoothed data seperately for velX and
+%compute the first derivatives of the smoothed data separately for velX and
 %velY and the total first derivative (i.e. accelaration)
 % [accX, accY, acc] = pbp_derivatives(smooth_velX, smooth_velY);
 %% step3: target shift time
@@ -211,7 +211,7 @@ trialtype = [IDs.trialType(:,:)];
 visualError = visualErrorCalculator(smooth_EyeX, smooth_EyeY, ...
     detected_saccades_fixations, trialtype, ...
     primary, corrective);
-%% remove visual error informatin for repititive trials with value 2
+%% remove visual error information for repititive trials with value 2
 % VE = visualError;
 % fnames = fieldnames(VE);
 % for triali = 1:size(repititions,1)

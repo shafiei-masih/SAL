@@ -2,7 +2,7 @@ function [derivativeX, derivativeY, derivative_total] = pbp_derivatives(dataX, d
 %This function calcaultes the point-by-point first derivative for a set of 
 %inputs recorded along x- and y-coordinates. 
 %Input arguments are two same-size matrices with time series of positional 
-%data seperated based on x- or y-coordinate.
+%data separated based on x- or y-coordinate.
 %It retursn up to three matrices: 
 %   . first derivative of the x-coordinate data
 %   . first derivative of the y-coordinate data

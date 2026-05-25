@@ -1,9 +1,9 @@
 function detected_saccades_fixations = findSaccadeOnset(detected_saccades_fixations, vel)
 %This function finds the onset of saccades as the local minima between the
 %last fixation point with a velocity below a global threshold and a given
-%saccde.
-%The global threshold is calculated trial-by-trial as the mean velocity of 
-%all fixations plus three times their standard deviatioin.
+%saccade.
+%The global threshold is calculated trial-by-trial as the mean velocity of
+%all fixations plus three times their standard deviation.
 %
 %Input arguments:
 %   . detetcted_saccades_fixations <struct>

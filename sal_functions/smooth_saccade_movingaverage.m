@@ -1,6 +1,6 @@
 function smoothData = smooth_saccade(X, window_span)
 %This function smooth the desired signal given the default parameters that
-%were set based on a trial-error approach unless these paramters are set
+%were set based on a trial-error approach unless these parameters are set
 %otherwise as input arguments to the function.
 %To overcome the undesired behavior of the smooth function at the end of
 %the signal, the smooth_saccade function returns unsmoothed data points as
